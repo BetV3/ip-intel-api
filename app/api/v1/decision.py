@@ -5,7 +5,7 @@ from app.services.decision_engine import decide
 
 router = APIRouter()
 
-@router.get("/decision", response_model=DecisionResponse)
+@router.post("/decision", response_model=DecisionResponse)
 async def decision(req: DecisionRequest, request: Request):
     try:
         validate_ip(req.ip)
